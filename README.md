@@ -3,9 +3,9 @@
 A terminal-like web application built with Node.js and Vue.js that allows users to interact with Trello through commands.
 
 ## Prerequisites
-Node.js (v14.x or higher)
-npm (v6.x or higher)
-Personal Trello API Key and Token
+Node.js (v14.x or higher) <br/>
+npm (v6.x or higher) <br/>
+Personal Trello API Key and Token <br/>
 
 ## Installation
 
