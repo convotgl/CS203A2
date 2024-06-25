@@ -5,7 +5,7 @@ A terminal-like web application built with Node.js and Vue.js that allows users 
 ## Prerequisites
 Node.js (v14.x or higher)
 npm (v6.x or higher)
-Trello API Key and Token
+Personal Trello API Key and Token
 
 ## Installation
 
@@ -62,3 +62,4 @@ Description: Delete a specified card from Trello.
 404 Not Found Error: Ensure the backend server is running and the route URLs are correct. <br/>
 Invalid API Key or Token: Verify that your Trello API key and token are correct and have the necessary permissions. <br/>
 Network Issues: Ensure there are no network issues or firewalls blocking the requests.
+Application Run Issues: Make sure you are running Command Prompt in administrator mode.
