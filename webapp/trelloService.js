@@ -42,6 +42,18 @@ module.exports = {
         }
     },
 
+    // Function to get all cards in a specific list
+    getCards: async (listId) => {
+        try {
+            // Making a GET request to the Trello API to fetch cards in a specific list
+            const response = await trelloApi.get(`/lists/${listId}/cards`);
+            return response.data; // Returning the data from the response
+        } catch (error) {
+            console.error('Error fetching cards:', error.response ? error.response.data : error.message);
+            throw error; // Throwing the error to be handled by the caller
+        }
+    },
+
     // Function to create a new board
     createBoard: async (name) => {
         try {

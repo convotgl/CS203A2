@@ -13,6 +13,7 @@
         <ul>
           <li>get boards</li>
           <li>get lists &lt;board_id&gt;</li>
+          <li>get cards &lt;list_id&gt;</li>
           <li>create board &lt;board_name&gt;</li>
           <li>delete board &lt;board_id&gt;</li>
           <li>create list &lt;board_id&gt; &lt;list_name&gt;</li>
@@ -53,6 +54,16 @@
               </li>
             </ul>
           </div>
+          <div v-if="cards" class="cards">
+            <h2>Cards</h2>
+            <ul>
+              <li v-for="card in cards" :key="card.id">
+                <strong>{{ card.name }}</strong>
+                <p>ID: {{ card.id }}</p>
+                <p>Description: {{ card.desc }}</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -68,7 +79,8 @@ export default {
       command: '', // Command entered by the user
       output: '', // Output of the executed command
       boards: null, // List of boards fetched from the server
-      lists: null // List of lists fetched from the server
+      lists: null, // List of lists fetched from the server
+      cards: null // List of cards fetched from the server
     };
   },
   methods: {
@@ -89,6 +101,9 @@ export default {
             } else if (args[0] === 'lists') {
               // Fetch lists if the command is 'get lists <board_id>'
               await this.fetchLists(args[1]);
+            } else if (args[0] === 'cards') { 
+              // Fetch cards if the command is 'get cards <list_id>'
+              await this.fetchCards(args[1]);
             }
             break;
           case 'create':
@@ -146,6 +161,15 @@ export default {
         this.lists = response.data;
       } catch (error) {
         this.output = 'Error fetching lists: ' + (error.response ? error.response.data : error.message);
+      }
+    },
+    // Fetch cards from the server for a specified list
+    async fetchCards(listId) { 
+      try {
+        const response = await axios.get(`/cards/${listId}`);
+        this.cards = response.data;
+      } catch (error) {
+        this.cards = 'Error fetching cards: ' + (error.response ? error.response.data : error.message);
       }
     },
     // Create a new board

@@ -49,6 +49,18 @@ app.get('/lists/:boardId', async (req, res) => {
     }
 });
 
+// Endpoint to get cards for a specific list
+app.get('/cards/:listId', async (req, res) => {
+    const listId = req.params.listId;
+    try {
+      const cards = await trelloService.getCards(listId);
+      res.json(cards);
+    } catch (error) {
+      console.error('Error retrieving cards:', error);
+      res.status(500).send(`Error fetching cards: ${error.response ? error.response.data : error.message}`);
+    }
+  });
+
 // Endpoint to create a new Trello board
 app.post('/boards', async (req, res) => {
     try {
