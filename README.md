@@ -24,7 +24,7 @@ cd webapp/public/terminal-frontend <br/>
 npm install
 
 ## Running the Application
-# MAKE SURE TO RUN BOTH COMMAND PROMPT WINDOWS IN ADMINISTRATOR MODE!
+## MAKE SURE TO RUN BOTH COMMAND PROMPT WINDOWS IN ADMINISTRATOR MODE!
 
 ### Start the Backend Server:
 cd webapp <br/>
