@@ -2,8 +2,8 @@
 const axios = require('axios');
 
 // Trello API credentials
-const TRELLO_API_KEY = '7bee12b07398d5948810e22c1a878ad4';
-const TRELLO_TOKEN = 'ATTA619638845bed1927514adddf7eb72324b3bd246625dc759696f113efa723a6824844AD61';
+const TRELLO_API_KEY = 'ENTER YOUR TRELLO API KEY HERE';
+const TRELLO_TOKEN = 'ENTER YOUR TRELLO API TOKEN HERE';
 
 // Creating an instance of axios with default settings for the Trello API
 const trelloApi = axios.create({
