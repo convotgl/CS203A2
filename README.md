@@ -5,7 +5,8 @@ A terminal-like web application built with Node.js and Vue.js that allows users 
 ## Prerequisites
 Node.js (v14.x or higher) <br/>
 npm (v6.x or higher) <br/>
-# Personal Trello API Key and Token <br/>
+### Personal Trello API Key and Token <br/>
+Make sure to change this to your personal Trello API and token in the trelloService.js file, to link the app to your personal Trello account. <br/>
 ![User API Example Image](webapp/images/userApiExample.png)
 
 ## Installation
